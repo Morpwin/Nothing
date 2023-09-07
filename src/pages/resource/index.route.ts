@@ -1,7 +1,7 @@
 import { RouteConfig } from '@/types/route.type';
 
 export default {
-  name: '岛屿',
-  aliases: 'index',
+  name: '资源',
+  aliases: 'resource',
   isTabbarPage: true,
 } as RouteConfig;

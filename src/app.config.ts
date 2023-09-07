@@ -1,16 +1,18 @@
 export default {
   /** PAGE_START */
 
-  pages: ['pages/index/index'],
+  pages: ['pages/index/index', 'pages/resource/index'],
   subpackages: [],
 
   /** PAGE_END */
 
   tabBar: {
-    custom: true,
     /** TABBAR_START */
 
-    list: [{ pagePath: 'pages/index/index', text: '首页' }],
+    list: [
+      { pagePath: 'pages/index/index', text: '岛屿' },
+      { pagePath: 'pages/resource/index', text: '资源' },
+    ],
 
     /** TABBAR_END */
   },
