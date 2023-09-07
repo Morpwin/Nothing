@@ -1,3 +1,4 @@
+/* eslint-disable import/no-commonjs */
 /* eslint @typescript-eslint/no-require-imports: 0 */
 const child = require('child_process');
 const fs = require('fs');
@@ -8,7 +9,7 @@ const pathe = require('pathe');
  * 获取src/pages中的所有index.route.ts文件
  */
 export function getAllRouteConfigFiles() {
-  return fg.sync(pathe.join(__dirname, '../../src/pages/**/index.route.ts'));
+  return fg.sync(pathe.join(__dirname, '../../src/**/index.route.ts'));
 }
 
 /**

@@ -1,16 +1,7 @@
-import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
-import './index.less'
+import { View } from '@tarojs/components';
+
+import styles from './index.module.less';
 
 export default function Index() {
-
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
-
-  return (
-    <View className='index'>
-      <Text>Hello world!</Text>
-    </View>
-  )
+  return <View className={styles['page']}>123</View>;
 }

@@ -1,10 +1,11 @@
 import { RouteConfig } from '@/types/route.type';
 import * as path from 'path';
+
 import generateRouteFunc from './func.generator';
 import writeAppConfigPages from './page.generator';
-import generateRouteReporter from './report.generator';
 import generateRouteType from './type.generator';
 import { getAllRouteConfigFiles, resolveRouteConfigContent } from './utils';
+
 
 
 export interface RouteConfigItem extends RouteConfig {
@@ -20,8 +21,6 @@ export const OPTIONS = {
     aliases_to_path: path.join(__dirname, '../../src/service/route/aliases_to_path.type.ts'),
     path_to_aliases: path.join(__dirname, '../../src/service/route/path_to_aliases.type.ts'),
     params: path.join(__dirname, '../../src/service/route/params.type.ts'),
-    config: path.join(__dirname, '../../src/routes.ts'),
-    reporter: path.join(__dirname, '../../src/service/route/alias_to_reporter_map.ts'),
   },
 };
 generate();
@@ -33,5 +32,4 @@ async function generate() {
   writeAppConfigPages(config);
   generateRouteType(config);
   generateRouteFunc(config);
-  generateRouteReporter(config);
 }

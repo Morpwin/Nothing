@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "removeComments": false,
+    "target": "ES2021",
+    "module": "CommonJS",
+    "removeComments": true,
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -21,8 +21,19 @@
     "typeRoots": ["node_modules/@types", "global.d.ts"],
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCase"
+        }
+      }
+    ]
   },
   "exclude": ["node_modules", "dist"],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }

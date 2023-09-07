@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import { OPTIONS, RouteConfigItem } from '.';
 import { formatFile } from './utils';
 
@@ -36,9 +37,9 @@ export default function generateRouteType(routeConfigItem: RouteConfigItem[]) {
   `;
 
   const pathToAliasesMap = Object.entries(aliasesToPathMap).reduce((ret, entry) => {
-    const [ key, value ] = entry;
-    ret[ value ] = key;
-    ret[ value.slice(1) ] = key;
+    const [key, value] = entry;
+    ret[value] = key;
+    ret[value.slice(1)] = key;
     return ret;
   }, {});
 
@@ -47,8 +48,7 @@ export default function generateRouteType(routeConfigItem: RouteConfigItem[]) {
     ${JSON.stringify(pathToAliasesMap).replaceAll(':', '=')}
 
     export default PATH_TO_ALIASES_MAP
-  `
-
+  `;
 
   const aliasesContent = `
      export enum ROUTE 
