@@ -1,0 +1,25 @@
+.float {
+  position: absolute;
+  z-index: 99999;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity: 0;
+
+  &__animation {
+    animation: fadeOut 1s;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    top: 50px;
+  }
+
+  100% {
+    opacity: 0;
+    top: 0;
+  }
+}

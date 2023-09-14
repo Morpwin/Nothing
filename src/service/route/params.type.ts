@@ -1,9 +1,11 @@
 export enum ROUTE {
+  'challenge' = 'challenge',
   'index' = 'index',
-  'resource' = 'resource',
+  'mine' = 'mine',
 }
 
 export default interface RouterParams extends Record<ROUTE, any> {
+  [ROUTE.challenge]: {};
   [ROUTE.index]: {};
-  [ROUTE.resource]: {};
+  [ROUTE.mine]: {};
 }

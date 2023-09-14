@@ -15,7 +15,7 @@ export default function writeAppConfigPages(routeConfigItem: RouteConfigItem[]) 
   routeConfigItem.forEach((item) => {
     if (!item.root) {
       // 首页特殊处理一下
-      if (item.name === '首页') {
+      if (item.name === 'index') {
         pages.unshift(item.page);
       } else {
         pages.push(item.page);
@@ -28,10 +28,17 @@ export default function writeAppConfigPages(routeConfigItem: RouteConfigItem[]) 
     }
 
     if (item.isTabbarPage) {
-      tabbar.push({
-        pagePath: item.page,
-        text: item.name,
-      });
+      if (item.name === 'index') {
+        tabbar.unshift({
+          pagePath: item.page,
+          text: item.name,
+        });
+      } else {
+        tabbar.push({
+          pagePath: item.page,
+          text: item.name,
+        });
+      }
     }
   });
 

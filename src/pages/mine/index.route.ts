@@ -1,7 +1,7 @@
 import { RouteConfig } from '@/types/route.type';
 
 export default {
-  name: 'index',
-  aliases: 'index',
+  name: 'mine',
+  aliases: 'mine',
   isTabbarPage: true,
 } as RouteConfig;
