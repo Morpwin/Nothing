@@ -59,7 +59,7 @@ export default defineConfig(async (merge) => {
       },
     },
     h5: {
-      publicPath: '/',
+      publicPath: '/unknown',
       staticDirectory: 'static',
       output: {
         filename: 'js/[name].[hash:8].js',
