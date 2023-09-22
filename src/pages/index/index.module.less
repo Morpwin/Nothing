@@ -48,8 +48,9 @@
 }
 
 .goods {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 160px);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
   justify-content: center;
   align-items: center;
@@ -69,8 +70,6 @@
     justify-content: center;
     box-sizing: border-box;
     padding: 16px;
-    height: 192px;
-    width: 160px;
     border: 1px solid;
     border-radius: 8px;
   }
@@ -93,6 +92,14 @@
     font-size: 24px;
     margin-top: 16px;
     color: #576b95;
+  }
+
+  &--close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 32px;
+    font-weight: bold;
   }
 }
 

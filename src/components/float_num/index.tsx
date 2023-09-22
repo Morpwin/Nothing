@@ -1,7 +1,9 @@
-import { View } from '@tarojs/components';
 import clsx from 'clsx';
 import { uniqueId } from 'lodash';
 import { forwardRef, useImperativeHandle, useState } from 'react';
+
+import { View } from '@tarojs/components';
+
 import styles from './index.module.less';
 
 export interface Num {
@@ -55,7 +57,7 @@ const FloatNum = forwardRef(({ roll }: Props, ref) => {
             });
           }}
         >
-          +{item.value}
+          +{item.value.toFixed(0)}
         </View>
       ))}
     </View>

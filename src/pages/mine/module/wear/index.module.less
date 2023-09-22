@@ -1,5 +1,6 @@
-.page {
-  padding: 0 24px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .box {
@@ -32,5 +33,18 @@
     &--hidden {
       border-color: transparent transparent #222 transparent;
     }
+  }
+}
+
+.expand {
+  &--box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+  }
+
+  &--label {
+    color: #ccc;
   }
 }

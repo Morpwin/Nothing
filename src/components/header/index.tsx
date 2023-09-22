@@ -12,22 +12,22 @@ interface Props {
 }
 
 export default function Header({ addNumRef, roll }: Props) {
-  const { gold, goldSpeed, goldPercent, goldSpeedPercent, dps, damage } = useUserStore((state) => state);
+  const { gold, goldSpeed, dps, damage, goldSpeedPercent, dpsPercent, damagePercent } = useUserStore((state) => state);
 
   return (
     <View className={styles.header}>
       <View className={styles.gold}>
         <View className={styles['flex-center']}>
           <Image className={styles['gold--icon']} src={GoldImg} mode="widthFix" />
-          <View>: {gold}</View>
-          <View className={styles['gold--speed']}>+{goldSpeed * (1 + goldSpeedPercent / 100)}/s</View>
+          <View>: {gold.toFixed(0)}</View>
+          <View className={styles['gold--speed']}>+{(goldSpeed * (1 + goldSpeedPercent / 100)).toFixed(2)}/s</View>
         </View>
         <FloatNum ref={addNumRef} roll={roll} />
       </View>
       <View className={styles.damage}>
         <View className={styles['flex-center']}>
-          <View>damage: {damage}</View>
-          <View className={styles['damage--speed']}>{dps}/s</View>
+          <View>damage: {(damage * (1 + damagePercent / 100)).toFixed(2)}</View>
+          <View className={styles['damage--speed']}>{(dps * (1 + dpsPercent / 100)).toFixed(2)}/s</View>
         </View>
       </View>
     </View>
